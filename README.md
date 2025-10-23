@@ -21,7 +21,11 @@ Bank Loan EXcel Dashboard.xlsx - Design Sheet.csv:
 Contains aggregated data or pre-calculated metrics, likely used for the Excel-based reporting component or data dictionary.SQLQuery1.sql, SQLQuery2.sql: S
 QL scripts containing the queries used to extract and aggregate data from the loan tables, including complex calculations for MTD and segmented analysis.
 Google Colab Notebook: (Optional) Documentation or a setup guide for the project.
+
+
 Power BI Dashboard : 
+
+
 <img width="1441" height="852" alt="Screenshot 2025-10-23 151651" src="https://github.com/user-attachments/assets/abc96023-f56f-42b9-8049-f426203456eb" />
 <img width="1440" height="851" alt="Screenshot 2025-10-23 160000" src="https://github.com/user-attachments/assets/fbe08288-533b-43aa-b0f0-d75c04e1ac0f" />
 <img width="1439" height="850" alt="Screenshot 2025-10-23 160041" src="https://github.com/user-attachments/assets/cbf2b030-13d8-4818-9037-81a334649f50" />
@@ -30,6 +34,8 @@ Excel Dashboard:
 <img width="1165" height="583" alt="Screenshot 2025-10-23 160244" src="https://github.com/user-attachments/assets/3cc9a110-3c15-4d2a-a51a-b222030a966f" />
 <img width="1165" height="582" alt="Screenshot 2025-10-23 160346" src="https://github.com/user-attachments/assets/4c45cd88-4025-4aa4-a4df-9487621eaa38" />
 <img width="1871" height="632" alt="Screenshot 2025-10-23 160444" src="https://github.com/user-attachments/assets/cf0efe24-c958-4a39-b77c-40ad6c2a42bb" />
+
+
 
 Python File Visual With Code :
 
