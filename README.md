@@ -27,12 +27,22 @@ Power BI Dashboard :
 
 
 <img width="1441" height="852" alt="Screenshot 2025-10-23 151651" src="https://github.com/user-attachments/assets/abc96023-f56f-42b9-8049-f426203456eb" />
+
+
 <img width="1440" height="851" alt="Screenshot 2025-10-23 160000" src="https://github.com/user-attachments/assets/fbe08288-533b-43aa-b0f0-d75c04e1ac0f" />
+
+
 <img width="1439" height="850" alt="Screenshot 2025-10-23 160041" src="https://github.com/user-attachments/assets/cbf2b030-13d8-4818-9037-81a334649f50" />
 
 Excel Dashboard:
+
+
 <img width="1165" height="583" alt="Screenshot 2025-10-23 160244" src="https://github.com/user-attachments/assets/3cc9a110-3c15-4d2a-a51a-b222030a966f" />
+
+
 <img width="1165" height="582" alt="Screenshot 2025-10-23 160346" src="https://github.com/user-attachments/assets/4c45cd88-4025-4aa4-a4df-9487621eaa38" />
+
+
 <img width="1871" height="632" alt="Screenshot 2025-10-23 160444" src="https://github.com/user-attachments/assets/cf0efe24-c958-4a39-b77c-40ad6c2a42bb" />
 
 
@@ -55,14 +65,24 @@ print("No of Columns :", df.shape[1])
 No of Columns : 24
 
 df.dtypes
+
 <img width="339" height="662" alt="Screenshot 2025-10-23 160926" src="https://github.com/user-attachments/assets/be1a9c50-a9b2-4df2-8c18-dee38844f99a" />
 
+
+
 ## Total Loan Application
+
+
+
 total_loan_application = df['id'].count()
 print("Total Loan Applications :", total_loan_application)
 Total Loan Applications : 38576
 
+
+
 ## MTD Total Loan Application
+
+
 latest_issue_date = df['issue_date'].max()
 latest_year = latest_issue_date.year
 latest_month = latest_issue_date.month
@@ -75,13 +95,21 @@ print(f"MTD Loan Applications (for {latest_issue_date.strftime('%B %Y')}): {mtd_
 
 MTD Loan Applications (for December 2021): 4314
 
+
+
 ## Total Funded Amount
+
+
 total_funded_amount = df['loan_amount'].sum()
 total_funded_amount_millions = total_funded_amount / 1000000
 print("Total Funded Amount : ${:.2f}M". format(total_funded_amount_millions))
 Total Funded Amount : $435.76M
 
+
+
 ## MTD - Total Funded Amount
+
+
 latest_issue_date = df['issue_date'].max()
 latest_year = latest_issue_date.year
 latest_month = latest_issue_date.month
@@ -95,13 +123,19 @@ print("MTD Total Funded Amount: ${:.2f}M".format(mtd_total_funded_amount_million
 
 MTD Total Funded Amount: $53.98M
 
+
 ##  Total Amount Received
+
+
 total_received_amount = df['total_payment'].sum()
 total_received_amount_millions = total_received_amount / 1000000
 print("Total Received Amount : ${:.2f}M". format(total_received_amount_millions))
 Total Received Amount : $473.07M
 
+
 ## MTD - Total Received Amount
+
+
 latest_issue_date = df['issue_date'].max()
 latest_year = latest_issue_date.year
 latest_month = latest_issue_date.month
@@ -113,18 +147,26 @@ mtd_total_received_amount_millions = mtd_total_received_amount / 1000000
 print("MTD Total Received Amount: ${:.2f}M".format(mtd_total_received_amount_millions))
 MTD Total Received Amount: $58.07M
 
+
 ## Average DTI Rate
+
 avg_dti_rate = df['dti'].mean()*100
 print("Average Debt to Interest Rate (Dti) : {:.2f}%".format(avg_dti_rate))
 Average Debt to Interest Rate (Dti) : 13.33%
 
+
 ## Average Interest Rate
+
 avg_int_rate = df['int_rate'].mean()*100
 print("Average Interest Rate : {:.2f}%".format(avg_int_rate))
 Average Interest Rate : 12.05%
 
 
+
+
 ## Good Loan Metrics
+
+
 good_loans = df[df['loan_status'].isin(["Fully Paid", "Current"])]
 
 total_loan_applications = df['id'].count()
@@ -148,7 +190,12 @@ Good Loan Funded Amount: $370.22M
 Good Loan Received Amount: $435.79M
 Percentage of Good Loan Applications: 86.18%
 
+
+
+
 ## Bad Loan Metrics
+
+
 bad_loans = df[df['loan_status'] == 'Charged Off']
 
 total_loan_applications = df['id'].count()
@@ -173,6 +220,8 @@ Bad Loan Received Amount: $37.28M
 Percentage of Bad Loan Applications: 13.82%
 
 ## Monthly Trends by Issue Date for Total Funded Amount
+
+
 monthly_funded = (
     df.sort_values('issue_date')
     .assign(month_name=lambda x: x['issue_date'].dt.strftime('%b %Y'))
@@ -197,9 +246,16 @@ plt.xticks(ticks=range(len(monthly_funded)), labels=monthly_funded['month_name']
 plt.grid(True, linestyle='--', alpha=0.6)
 plt.tight_layout()
 plt.show()
+
+
 <img width="989" height="490" alt="image" src="https://github.com/user-attachments/assets/22134780-c017-420a-b286-5f215d4a2de4" />
 
+
+
+
 ### Monthly Trends by Issue Date for Total Amount Received  
+
+
 monthly_received = (
     df.sort_values('issue_date')
     .assign(month_name=lambda x: x['issue_date'].dt.strftime('%b %Y'))
@@ -225,7 +281,10 @@ plt.grid(True, linestyle='--', alpha=0.6)
 plt.tight_layout()
 plt.show()
 
+
 <img width="989" height="490" alt="image" src="https://github.com/user-attachments/assets/68e9b607-16dc-483d-946c-e58ff643f3cb" />
+
+
 
 ### Monthly Trend by Issue Date for Total Loan Applications
 
@@ -253,7 +312,9 @@ plt.grid(True, linestyle='--', alpha=0.6)
 plt.tight_layout()
 plt.show()
 
+
 <img width="989" height="490" alt="image" src="https://github.com/user-attachments/assets/217cbad0-0bd2-46a4-946e-e86983eb04c1" />
+
 
 
 ### Regional Analysis by State for Total Funded Amount
@@ -275,10 +336,15 @@ plt.ylabel('State')
 plt.tight_layout()
 plt.show()
 
+
 <img width="983" height="790" alt="image" src="https://github.com/user-attachments/assets/89fb7e0a-719f-40cf-bcfd-1956e1e8d70c" />
 
 
+
+
 ### Regional Loan Analysis by State for Total Received Amount
+
+
 state_receiving = df.groupby('address_state')['total_payment'].sum().sort_values(ascending=True)
 state_receiving_thousands = state_receiving / 1000
 
@@ -296,7 +362,10 @@ plt.ylabel('State')
 plt.tight_layout()
 plt.show()
 
+
 <img width="983" height="790" alt="image" src="https://github.com/user-attachments/assets/2261c4ae-f04d-42a3-a3dc-18e1bc1ee5dd" />
+
+
 
 ### Regional Analysis by State for Total Loan Applications
 
@@ -317,7 +386,11 @@ plt.ylabel('State')
 plt.tight_layout()
 plt.show()
 
+
 <img width="989" height="790" alt="image" src="https://github.com/user-attachments/assets/df2b4eaa-1f60-4301-8e4c-b3d47dd48129" />
+
+
+
 
 ### Loan Term Analysis by Total Funded Amount
 term_funding_millions = df.groupby('term')['loan_amount'].sum() / 1000000
@@ -334,7 +407,11 @@ plt.gca().add_artist(plt.Circle((0,0), 0.70, color='white'))
 plt.title('Total Funded Amount by Term(in $ Millions)')
 plt.show()
 
+
 <img width="489" height="427" alt="image" src="https://github.com/user-attachments/assets/a1672c83-b7f7-45c1-a3a2-1e8ffd9b1383" />
+
+
+
 
 ### Loan Term Analysis by Total Received Amount
 term_receiving_millions = df.groupby('term')['total_payment'].sum() / 1000000
@@ -351,7 +428,10 @@ plt.gca().add_artist(plt.Circle((0,0), 0.70, color='white'))
 plt.title('Total Received Amount by Term(in $ Millions)')
 plt.show()
 
+
 <img width="490" height="427" alt="image" src="https://github.com/user-attachments/assets/03623bc2-bfe0-4975-871a-f2e5aa2c7a45" />
+
+
 
 ### Loan Term Analysis by Total Loan Applications
 term_applications = df.groupby('term')['id'].count()
@@ -368,7 +448,10 @@ plt.gca().add_artist(plt.Circle((0,0), 0.70, color='white'))
 plt.title('Term Applications')
 plt.show()
 
+
 <img width="470" height="490" alt="image" src="https://github.com/user-attachments/assets/1ff4aad0-5ac3-4c19-a918-c935a567fe33" />
+
+
 
 ### Employee Length by Total Funded Amount 
 
@@ -388,7 +471,10 @@ plt.grid(axis='x', linestyle='--', alpha=0.5)
 plt.tight_layout()
 plt.show()
 
+
 <img width="986" height="590" alt="image" src="https://github.com/user-attachments/assets/f775a161-87fe-4b8a-9d0c-b846c0633ef5" />
+
+
 
 ### Employee Length by Total Received Amount
 emp_receiving_thousands = df.groupby('emp_length')['total_payment'].sum().sort_values() / 1000
@@ -407,9 +493,14 @@ plt.grid(axis='x', linestyle='--', alpha=0.5)
 plt.tight_layout()
 plt.show()
 
+
 <img width="986" height="590" alt="image" src="https://github.com/user-attachments/assets/fe908542-2753-4f9d-ab67-e0b2c38ec436" />
 
+
+
 ### Employee Length by Total Loan Application
+
+
 
 emp_application = df.groupby('emp_length')['id'].count().sort_values()
 
@@ -429,7 +520,11 @@ plt.show()
 
 <img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/ffb460af-3c9f-4e50-adaa-86b7c78385e4" />
 
+
+
 ### Loan Purpose by Total Funded Amount
+
+
 purpose_funding_millions = df.groupby('purpose')['loan_amount'].sum().sort_values() / 1000000
 
 plt.figure(figsize=(10,6))
@@ -446,7 +541,10 @@ plt.grid(axis='x', linestyle='--', alpha=0.6)
 plt.tight_layout()
 plt.show()
 
+
 <img width="987" height="590" alt="image" src="https://github.com/user-attachments/assets/d07ec215-2c8a-4cd6-9ffb-028ee3611e50" />
+
+
 
 ### Loan Purpose by Total Received Amount
 purpose_receiving_millions = df.groupby('purpose')['total_payment'].sum().sort_values() / 1000000
@@ -464,7 +562,11 @@ plt.xlabel("Received Amount ($ Millions)")
 plt.grid(axis='x', linestyle='--', alpha=0.6)
 plt.tight_layout()
 plt.show()
+
+
 <img width="987" height="590" alt="image" src="https://github.com/user-attachments/assets/7866ac77-3def-47d3-9a63-b04c41691bec" />
+
+
 
 ### Loan Purpose by Total Loan Application
 
@@ -484,7 +586,11 @@ plt.grid(axis='x', linestyle='--', alpha=0.6)
 plt.tight_layout()
 plt.show()
 
+
 <img width="988" height="590" alt="image" src="https://github.com/user-attachments/assets/0aec5b36-c0d5-4657-bced-6d53e582215a" />
+
+
+
 
 ### Home Ownership by Total Funded Amount
 home_funding = df.groupby('home_ownership')['loan_amount'].sum().reset_index()
@@ -500,7 +606,11 @@ fig = px.treemap(
 )
 
 fig.show()
+
+
 <img width="621" height="525" alt="newplot" src="https://github.com/user-attachments/assets/bf629bd0-c497-4bdf-a2df-7bfe51880c02" />
+
+
 
 ### Home Ownership by Total Received Amount
 home_receiving = df.groupby('home_ownership')['total_payment'].sum().reset_index()
@@ -516,7 +626,9 @@ fig = px.treemap(
 )
 
 fig.show()
-<img width="621" height="525" alt="newplot (2)" src="https://github.com/user-attachments/assets/b3360b92-fd29-4826-8e72-e1836526c976" />
+
+<img width="621" height="525" alt="newplot (1)" src="https://github.com/user-attachments/assets/599f5efa-c194-46db-827e-e8d33e107e3f" />
+
 
 
 
@@ -536,8 +648,9 @@ fig = px.treemap(
 )
 
 fig.show()
-<img width="621" height="525" alt="newplot (1)" src="https://github.com/user-attachments/assets/599f5efa-c194-46db-827e-e8d33e107e3f" />
 
+
+<img width="621" height="525" alt="newplot (2)" src="https://github.com/user-attachments/assets/b3360b92-fd29-4826-8e72-e1836526c976" />
 
 
 
