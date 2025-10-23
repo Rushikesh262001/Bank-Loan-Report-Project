@@ -1,0 +1,25 @@
+🏦 Bank Loan Data Analysis and Performance Dashboard
+This project presents a comprehensive Bank Loan Analysis Dashboard created using Power BI and SQL. 
+The goal is to evaluate the bank's financial health, assess loan performance, and uncover key trends by providing a dynamic and insightful view of the loan portfolio data.
+🎯 Project OverviewThe core of this project is to distinguish between 'Good Loans' (Fully Paid) and 'Bad Loans' (Charged Off) to calculate a crucial Bad Loan Percentage. 
+The dashboard tracks key financial metrics and provides multi-dimensional analysis to help stakeholders make informed decisions regarding risk assessment and portfolio management.
+✨ Key Features and AnalysisThe dashboard and underlying analysis provide the following critical insights:Key Performance Indicators (KPIs):
+Total Loan ApplicationsTotal Funded AmountTotal Received AmountAverage Interest Rate and Average DTI (Debt-to-Income)Loan Performance Metrics:
+Good Loan vs. Bad Loan applications, funded amount, and received amount.Calculation of the overall Bad Loan Percentage.
+Time-Series and Trend Analysis:Month-to-Date (MTD) analysis for all primary KPIs, 
+including growth metrics (MTD vs. PMTD - Previous Month to Date).Monthly Trend analysis of applications, funded amount, and received amount.
+Segmentation Analysis:
+Detailed breakdowns of loan metrics by key borrower and loan characteristics:
+Grade/Sub GradeLoan Term (36 months vs. 60 months)Employee LengthPurpose (Debt Consolidation, Credit Card, Home Improvement, etc.)Home Ownership (MORTGAGE, RENT, OWN)Geographical State
+🛠️ Technologies UsedCategoryTool/LanguagePurposeData SourceCSV/ExcelSource files containing the raw bank loan data.
+Data ProcessingSQL ServerUsed for cleaning, transformation, and calculating core business metrics (e.g., MTD, Good vs. Bad Loan counts).
+Data VisualizationPower BIThe primary tool for creating the interactive and dynamic dashboard.
+📂 Repository ContentsBANK_LOAN_PROJECT.pbix: The final Power BI Dashboard file. 
+This file contains all the visualizations, measures, and data model.Bank Loan EXcel Dashboard.xlsx - financial_loan.csv: 
+The main dataset used for the analysis.Bank Loan EXcel Dashboard.xlsx - bank_loan_data.csv: A secondary or processed version of the loan data.
+Bank Loan EXcel Dashboard.xlsx - Design Sheet.csv: 
+Contains aggregated data or pre-calculated metrics, likely used for the Excel-based reporting component or data dictionary.SQLQuery1.sql, SQLQuery2.sql: 
+SQL scripts containing the queries used to extract and aggregate data from the loan tables, including complex calculations for MTD and segmented analysis.
+Google Colab Notebook: (Optional) Documentation or a setup guide for the project.
+
+Power BI Dashboard:
